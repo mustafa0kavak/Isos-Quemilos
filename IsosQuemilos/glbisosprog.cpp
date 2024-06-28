@@ -89,30 +89,35 @@ void writeFile() {
     system("pause");
 }
 
-void settings() {
-    cout << "Settings selected." << endl;
-    system("pause");
-}
-
 void terminal() {
     string terminalChoice;
-    system("cls");
-    cout << "root@isosque ";
-    cin >> terminalChoice;
 
-    if (terminalChoice == "explorer") {
+    while (true) {
+        system("cls");
+        cout << "root@isosque ";
+        cin >> terminalChoice;
+
+        if (terminalChoice == "help") {
+            cout << "calculator : Makes calculations.\n"
+                << "readfiles  : Reads the text written in that file from a certain file.\n"
+                << "writefile  : Writes to a specific file.\n"
+                << "exit       : Exits the terminal.\n";
+        }
+        else if (terminalChoice == "calculator") {
+            calculator();
+        }
+        else if (terminalChoice == "readfiles") {
+            readFile();
+        }
+        else if (terminalChoice == "writefiles") {
+            writeFile();
+        }
+        else if (terminalChoice == "exit") {
+            break;
+        }
+        else {
+            cout << "Invalid choice." << endl;
+        }
+        system("pause");
     }
-    else if (terminalChoice == "calculator") {
-        calculator();
-    }
-    else if (terminalChoice == "readfiles") {
-        readFile();
-    }
-    else if (terminalChoice == "writefiles") {
-        writeFile();
-    }
-    else {
-        cout << "Invalid choice." << endl;
-    }
-    system("pause");
 }
